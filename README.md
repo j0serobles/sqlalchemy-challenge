@@ -25,7 +25,7 @@ Using the provided starter notebook and `hawaii.sqlite` files, we completed anal
 
 For this analysis, we queried the last 12 month of the available measurement data, selecting the date and precipitation (prcp) values.  We assembled the columns into a pandas DataFrame, using the date column as the index.  We then plotted the year of measurements for precipitation in a Pandas bar chart.  Using Panda's `describe()` method, we also printed some statistics for the precipitation data.  
 
-  ![actual precipitation bar plot](Images/prcp.PNG)
+  ![actual precipitation bar plot](Images/precipitation.png)
 
 ### Station Analysis
 
@@ -79,7 +79,7 @@ To access the JSON data, run `python app.py` from your command line and browse t
 
   * Returns the JSON representation of your dictionary.
   
-  ![precipitation](Images/prcp.png)
+  ![precipitation](Images/prcp.PNG)
 
 * `/api/v1.0/stations`
 

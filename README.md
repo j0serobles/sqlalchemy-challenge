@@ -1,50 +1,33 @@
-# SQLAlchemy Homework - Surfs Up!
+# UCF Data Analysis And Visualization Bootcamp - SQLAlchemy Homework - Surfs Up!
 
-### Before You Begin
+### Intro
 
-1. Create a new repository for this project called `sqlalchemy-challenge`. **Do not add this homework to an existing repository**.
-
-2. Clone the new repository to your computer.
-
-3. Add your Jupyter notebook and `app.py` to this folder. These will be the main scripts to run for analysis.
-
-4. Push the above changes to GitHub or GitLab.
-
-![surfs-up.png](Images/surfs-up.png)
-
-Congratulations! You've decided to treat yourself to a long holiday vacation in Honolulu, Hawaii! To help with your trip planning, you need to do some climate analysis on the area. The following outlines what you need to do.
+This purpose of this homework was to complete some climate analysis on the area of Hawaii.  Precipitation and temperature data was analyzed to plan for a coming vacation. Data was collected at a series of weather stations across the region and the measurements saved to a file.  The list of weather stations was also saved to a file with information about each station's location. 
 
 ## Step 1 - Climate Analysis and Exploration
 
-To begin, use Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. All of the following analysis should be completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
+To begin, we used Python and SQLAlchemy to do basic climate analysis and data exploration of the climate database. All of the analysis was completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
 
-* Use the provided [starter notebook](climate_starter.ipynb) and [hawaii.sqlite](Resources/hawaii.sqlite) files to complete your climate analysis and data exploration.
+Using the provided [starter notebook](climate_starter.ipynb) and [hawaii.sqlite](Resources/hawaii.sqlite) files, we completed analysis of the weather data, following these general steps:
 
-* Use SQLAlchemy `create_engine` to connect to your sqlite database.
+* Using SQLAlchemy `create_engine` to connect to your sqlite database.
 
-* Use SQLAlchemy `automap_base()` to reflect your tables into classes and save a reference to those classes called `Station` and `Measurement`.
+* Using SQLAlchemy ORM's `automap_base()` to reflect your tables into classes and save a reference to those classes called `Station` and `Measurement`.
 
-* Link Python to the database by creating an SQLAlchemy session.
+* Linking Python to the database by creating an SQLAlchemy session.
 
-* **Important** Don't forget to close out your session at the end of your notebook.
+* Querying the tables using SQLAlchemy's query() method and creating Panda's DataFrames with the results.
+
+* Plotting and analyzing data from the dataframes. 
+
+The final notebook can be accessed from the [Github repo.](https://github.com/j0serobles/sqlalchemy-challenge/blob/main/climate_starter.ipynb)
+
 
 ### Precipitation Analysis
 
-* Start by finding the most recent date in the data set.
+For this analysis, we queried the last 12 month of the available measurement data, selecting the date and precipitation (prcp) values.  We assembled the columns into a pandas DataFrame, using the date column as the index.  We then plotted the year of measurements for precipitation in a Pandas bar chart.  Using Panda's `describe()` method, we also printed some statistics for the precipitation data.  
 
-* Using this date, retrieve the last 12 months of precipitation data by querying the 12 preceding months of data. **Note** you do not pass in the date as a variable to your query.
-
-* Select only the `date` and `prcp` values.
-
-* Load the query results into a Pandas DataFrame and set the index to the date column.
-
-* Sort the DataFrame values by `date`.
-
-* Plot the results using the DataFrame `plot` method.
-
-  ![precipitation](Images/precipitation.png)
-
-* Use Pandas to print the summary statistics for the precipitation data.
+  ![actual precipitation bar plot](Images/precipitation.png)
 
 ### Station Analysis
 
